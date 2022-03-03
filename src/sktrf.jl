@@ -26,7 +26,7 @@ sktrf!(UpLo, Mode, A::Matrix{T}, Work::Vector{T}) where {T} = begin
     iPrm = [1:m...]
     sktrf!(UpLo, Mode, A, iPiv, Work)
 
-    for i = 1:400
+    for i = 1:m
 	    j = iPiv[i]
 	    index_0 = iPrm[i];
 	    iPrm[i] = iPrm[j];
