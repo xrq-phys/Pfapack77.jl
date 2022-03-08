@@ -89,8 +89,8 @@ ltl_inv!(A::Matrix{T}) where {T} = begin
     sktdsmx!(A, Tv, L)
     rP = invperm(iPrm)
 
+    A .= A[:, rP] # TODO: Include in sktdsmx.
     BLAS.trmm!('L', 'L', 'T', 'U', 1.0, L, A)
-    # TODO: Do this in previous steps.
-    A .= A[rP, rP]
+    A .= A[rP, :]
 end
 
