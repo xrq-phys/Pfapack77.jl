@@ -30,12 +30,14 @@ sktdsm!(T, B) = begin
     end
 end
 
-sktdsmx(T, B) = begin
+sktdsmx(T, B) = sktdsmx!(zeros(size(B)...), T, B)
+
+sktdsmx!(X, T, B) = begin
     n, k = size(B)
     n == size(T)[1] + 1 || error("Mismatch")
     n % 2 == 0 || error("Non-invertable")
 
-    X = zeros(n, k)
+    X .= zeros(n, k) # Defer X's shape check.
     X[2, :] .= B[1, :] ./ -T[1]
     for i = 3:2:n
         # Row i-2 -> i.
