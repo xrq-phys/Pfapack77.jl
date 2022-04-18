@@ -21,7 +21,7 @@ L, T, iPrm = ltl_decomp!(B);
 pf = prod(T[1:2:end])
 @info pf
 @info pf_amp
-@test zrtest((abs(pf) - pf_amp)/pf_amp, 1e-10, "11_Pfaffian")
+@test zrtest((abs(pf) - pf_amp)/pf_amp, 2e-9, "11_Pfaffian")
 
 Bi = ltl_inv(L, T, iPrm)
 @test zrtest(reduce(max, abs.(Bi * (A - A') - I)), 1e-8, "12_Inverse")
