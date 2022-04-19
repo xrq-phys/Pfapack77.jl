@@ -6,6 +6,9 @@ version = "0.1.0"
 [deps]
 Libdl = "8f399da3-3557-5675-b5ff-fb832c97cbdb"
 LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
-OpenBLAS32 = "fae2ebec-24a6-48a2-8621-3bc3eb4dc335"
+OpenBLAS32_jll = "656ef2d0-ae68-5445-9ca0-591084a874a2"
 Pfapack_jll = "36de11a4-635f-5b15-8378-93f477661e31"
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[compat]
+julia = "1.7"
